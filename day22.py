@@ -25,3 +25,25 @@ with open('bu_facts.json', 'w') as f:
 
 print("Saved to bu_facts.json!")
 
+
+
+
+
+url2 = 'https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States'
+headers = {'User-Agent': 'Mozilla/5.0'}
+response2 = requests.get(url2, headers=headers)
+soup2 = BeautifulSoup(response2.content, 'html.parser')
+
+names = soup2.find_all('span', class_ = 'fn')
+
+print(f"Found: {len(names)} names")
+print(soup2.find('table', class_= 'wikipedia'))
+presidents =[]
+for name in names:
+    presidents.append({'name': name.text.strip()})
+
+
+with open('presidents.json', 'w') as f:
+    json.dump(presidents, f, indent=2)
+
+print(f"Saved {len(presidents)} presidents to presidents.json!")

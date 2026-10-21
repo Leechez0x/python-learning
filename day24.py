@@ -67,3 +67,15 @@ print(np.vstack((a,b)))
 
 print(np.random.rand(3,3))
 print(np.random.randint(0,10, (3,3)))
+
+nums = np.array([2,4,6,8,10])
+
+print('min:', np.min(nums))
+print('max:', np.max(nums))
+print('mean:', np.mean(nums))
+print('median:', np.median(nums))
+print('std:', np.std(nums))
+print('sum:', np.sum(nums))
+
+print(np.linspace(0,10,5))
+print(np.linspace(0,1,6))

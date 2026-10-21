@@ -79,3 +79,11 @@ print('sum:', np.sum(nums))
 
 print(np.linspace(0,10,5))
 print(np.linspace(0,1,6))
+
+nums = np.array([1,2,3,4,5,6,7,8,9,10])
+
+result = np.where(nums>5)
+print(result)
+
+
+print(nums[nums>5])

@@ -34,3 +34,24 @@ print(df['country'] == 'USA')   # rows where country is USA
 # Filtering rows
 print(df[df['age'] > 28])           # rows where age is greater than 28
 print(df[df['country'] == 'USA'])   # rows where country is USA
+
+df['salary'] = [50000, 60000, 70000, 55000]
+df = df.drop('salary', axis=1)
+print(df)
+
+
+import csv 
+
+with open('students.csv', 'w', newline= '') as f:
+    writer = csv.writer(f)
+    writer.writerow(['name', 'age', 'score'])
+    writer.writerow(['Alice', 20, 85])
+    writer.writerow(['Bob', 22, 90])
+    writer.writerow(['Charlie', 21, 78])
+    writer.writerow(['David', 23, 95])
+
+df2 = pd.read_csv('students.csv')
+print(df2)
+
+print(df2.sort_values('score'))
+print(df2.sort_values('score', ascending=False))

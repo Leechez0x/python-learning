@@ -55,3 +55,12 @@ print(df2)
 
 print(df2.sort_values('score'))
 print(df2.sort_values('score', ascending=False))
+
+df3 = pd.read_csv('hacker_news.csv')
+
+print(df3.head())
+print(df3.tail())
+print(df3['title'])
+print(df3.shape)
+print(df3[df3['title'].str.contains('python', case = False)])
+print(df3[df3['title'].str.contains('Javascript', case = False)])

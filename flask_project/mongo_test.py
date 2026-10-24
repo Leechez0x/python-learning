@@ -1,7 +1,9 @@
 from pymongo import MongoClient
-import ssl
+from dotenv import load_dotenv
+import os
 
-connection_string = "mongodb+srv://01leechez_db_user:Ben_2003@cluster0.we7j16a.mongodb.net/"
+load_dotenv()
+connection_string = os.getenv("MONGO_URI")
 
 client = MongoClient(connection_string, tls=True, tlsAllowInvalidCertificates=True)
 
